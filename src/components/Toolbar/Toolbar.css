@@ -60,8 +60,8 @@
     flex: 1;
 }
 
-.toolbar_navigation-items a:hover,
-.toolbar_navigation-items a:active {
+.toolbar_navigation-items link:hover,
+.toolbar_navigation-items Link:active {
 color: #fc5185;
 }
 

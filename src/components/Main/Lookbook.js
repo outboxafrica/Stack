@@ -1,11 +1,30 @@
-import React, {useState} from 'react'
-import Toolbar from '../Toolbar/Toolbar'
-import Backdrop from '../Backdrop/Backdrop'
-import SideDrawer from '../SideDrawer/SideDrawer'
+import React, { useState, useEffect } from 'react';
+import { FlatList, ScrollView } from 'react-native';
+import axios from 'axios';
+import Toolbar from '../Toolbar/Toolbar';
+import Backdrop from '../Backdrop/Backdrop';
+import SideDrawer from '../SideDrawer/SideDrawer';
+import Sidebar from './Sidebar';
+import './Lookbook.css';
 
 function Lookbook(props) {
+	const [ SideDrawerOpen, setSideDrawerOpen ] = useState(false);
 
-    const [ SideDrawerOpen, setSideDrawerOpen ] = useState(false);
+	useEffect(() => {
+		fetchApi();
+	}, []);
+
+	const [ loading, setLoading ] = useState(true);
+	const [ person, setPerson ] = useState([]);
+
+	const fetchApi = async () => {
+		const url = 'https://git.heroku.com/outboxedugroup3-api.git';
+		const response = await fetch(url);
+		const data = await response.json();
+		setLoading(false);
+		setPerson(data.results);
+		console.log(data);
+	};
 
 	function drawerToggleClickHandler() {
 		setSideDrawerOpen((prevState) => {
@@ -16,36 +35,56 @@ function Lookbook(props) {
 	function backdropClickHandler() {
 		setSideDrawerOpen(false);
 	}
-    
-	
 
 	let backdrop;
 
 	if (SideDrawerOpen) {
 		backdrop = <Backdrop click={backdropClickHandler} />;
 	}
-    return (
-        <div>
-            <Toolbar
-				   login="Login" 
-				   signup="Signup" 
-				   drawerClickHandler={drawerToggleClickHandler} 
-				 />
-				
+	return (
+		<div>
+			<Toolbar login="Login" signup="Signup" drawerClickHandler={drawerToggleClickHandler} />
 
-            <SideDrawer
-				   about="About"
-                   comments="View Comments"
-                   viewPosts="Posts"
-                   log="Login"
-                   sign="Signup"
-				   prof="My Profile"
-				   show={SideDrawerOpen} 
-				 />
-				{backdrop}
-            <h1>view users on the platform</h1>
-        </div>
-    )
+			<SideDrawer
+				about="About"
+				logout="Logout"
+				post="Ask Question" 
+				posts="Posts"
+				prof="My Profile"
+				show={SideDrawerOpen}
+			/>
+			{backdrop}
+			<div className="lookbook-body">
+				<main className="main">
+					<div className="hidden">
+						<Sidebar />
+					</div>
+					<div className="lookbook">
+						{loading || !person ? (
+							<div className="loading">Loading...</div>
+						) : (
+							<ScrollView>
+								<div className="users">
+									{person.map((user) => (
+										<div class="card" style={{ width: '18rem' }}>
+											<img src={user.picture.large} class="card-img-top" alt="..." />
+											<div class="card-body">
+												<h5 class="card-title">
+													<span>{user.name.title}</span> &nbsp;
+													<span>{user.name.first}</span>&nbsp;
+													<span>{user.name.last}</span>
+												</h5>
+											</div>
+										</div>
+									))}
+								</div>
+							</ScrollView>
+						)}
+					</div>
+				</main>
+			</div>
+		</div>
+	);
 }
 
-export default Lookbook
+export default Lookbook;

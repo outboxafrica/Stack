@@ -27,8 +27,11 @@ function Toolbar(props) {
 						<Link to="/">
 							<li>{props.about}</li>
 						</Link>
-						<Link to="/userPage">
+						<Link to="/posts">
 							<li>{props.main}</li>
+						</Link>
+						<Link to="/askQuestion">
+							<li>{props.post}</li>
 						</Link>
 						<Link to="/login">
 							<li>{props.login}</li>

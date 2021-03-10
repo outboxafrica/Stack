@@ -2,7 +2,10 @@ import React, {useState} from 'react'
 import Toolbar from '../Toolbar/Toolbar'
 import Backdrop from '../Backdrop/Backdrop'
 import SideDrawer from '../SideDrawer/SideDrawer'
-import './login.css'
+import {SiGnuprivacyguard} from "react-icons/si"
+import {RiLoginBoxLine} from "react-icons/ri"
+import SignupForm from '../UI/SignupForm/signupForm'
+import './Signup.css'
 
 function Signup(props) {
 
@@ -29,13 +32,15 @@ function Signup(props) {
         <div id="signup" >
             <Toolbar
                    about="About"
+				   main="Posts"
 				   login="Login" 
 				   drawerClickHandler={drawerToggleClickHandler} 
 				 />
 				
 
             <SideDrawer
-                   about="About"
+			       about="About"
+				   posts="Posts"
 				   log="Login" 
 				   show={SideDrawerOpen} 
 				 />
@@ -43,6 +48,7 @@ function Signup(props) {
             <main className="main">
             <div className="content">
             <h1>Signup</h1>
+			<SignupForm />
             </div>
             </main>
         </div>

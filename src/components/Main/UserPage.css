@@ -1,0 +1,136 @@
+.main {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	height: 100%;
+	display: flex;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.userpage {
+	background: rgba(0, 0, 0, 0.7) url(../images/aleks-dorohovich-nJdwUHmaY8A-unsplash.jpg);
+	background-size: cover;
+	background-blend-mode: darken;
+	flex-direction: column;
+	color: rgb(255, 255, 255);
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 100%;
+	width: 60%;
+	flex: 8.5;
+}
+
+.hidden {
+	display: flex;
+	flex-direction: column;
+	flex: 2;
+	height: 100%;
+	width: 100%;
+	background: #4d6785;
+	box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
+}
+
+/* user profile card   */
+.card {
+	width: 80%;
+	height: 40%px;
+	background: white;
+	border-radius: 10px;
+	box-shadow: 0px 1px 10px 1px black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.upper-container {
+	height: 50%;
+	background: #4d6785;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.image-container img {
+	margin-top: 4rem;
+	background: white;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	padding: 5px;
+	border: 2px solid rgb(29, 70, 29);
+}
+.lower-container {
+	padding-top: 5rem;
+	height: 300px;
+	color: black;
+	background: transparent;
+	text-align: center;
+	font-size: 1.5rem;
+	font-family: sans-serif;
+}
+
+/* user's Questions */
+.usersQuestions {
+	width: 80%;
+	height: 40%px;
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(10px);
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.prof {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 0.5rem 0;
+}
+.prof span {
+	padding: 0.8rem 0 0 0;
+	font-size: 1.5rem;
+}
+
+.prof-Q-img {
+	position: relative;
+	width: 40%;
+}
+
+.prof-Q-img img {
+	border-radius: 10px;
+}
+
+.prof img {
+	border-radius: 50%;
+	height: 50px;
+	width: 50px;
+}
+hr {
+	width: 90%;
+}
+.prof-P-message p {
+	font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+	.hidden {
+		display: none;
+	}
+
+	.image-container img {
+		background: white;
+		border-radius: 50%;
+		padding: 5px;
+	}
+  .prof-P-message p {
+    font-size: 1.2rem;
+  }
+}
