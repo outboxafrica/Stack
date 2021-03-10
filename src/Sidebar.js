@@ -46,6 +46,9 @@ function Sidebar() {
 					<Link  to="userPage">
 						<li  className="sidebarlinks"><CgProfile  color="white" size="2em" />&nbsp;My Profile</li>
 					</Link>
+					<Link  to="profile">
+						<li  className="sidebarlinks"><CgProfile  color="white" size="2em" />&nbsp;Profile</li>
+					</Link>
                    
 				</ul>
 			</nav>

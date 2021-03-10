@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import Toolbar from '../Toolbar/Toolbar'
-import Backdrop from '../Backdrop/Backdrop'
-import SideDrawer from '../SideDrawer/SideDrawer'
+import Toolbar from '../UI/Toolbar/Toolbar'
+import Backdrop from '../UI/Backdrop/Backdrop'
+import SideDrawer from '../UI/Backdrop/SideDrawer/SideDrawer'
 
 function Lookbook(props) {
 

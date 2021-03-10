@@ -8,7 +8,7 @@ import {FcAbout, FcComments} from "react-icons/fc"
 import {CgCommunity, CgProfile} from "react-icons/cg"
 import {SiGnuprivacyguard} from "react-icons/si"
 import {FiUsers} from "react-icons/fi"
-import Sidebar from '../../Sidebar';
+import Sidebar from '../../../../Sidebar';
 
 function SideDrawer(props) {
 	let drawerClasses = 'side-drawer';

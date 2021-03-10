@@ -1,10 +1,9 @@
 import React, {useState} from 'react'
-import Toolbar from '../Toolbar/Toolbar'
-import Backdrop from '../Backdrop/Backdrop'
-import SideDrawer from '../SideDrawer/SideDrawer'
-import './login.css'
+import Toolbar from '../UI/Toolbar/Toolbar'
+import Backdrop from '../UI/Backdrop/Backdrop'
+import SideDrawer from '../UI/Backdrop/SideDrawer/SideDrawer'
 
-function Login(props) {
+function PostComments(props) {
 
     const [ SideDrawerOpen, setSideDrawerOpen ] = useState(false);
 
@@ -26,27 +25,28 @@ function Login(props) {
 		backdrop = <Backdrop click={backdropClickHandler} />;
 	}
     return (
-        <div id="login">
+        <div>
             <Toolbar
-                   about="About"
+				   login="Login" 
 				   signup="Signup" 
 				   drawerClickHandler={drawerToggleClickHandler} 
 				 />
 				
 
             <SideDrawer
-                   about="About"
-				   sign="Signup"
+				   about="About"
+                   comments="View Comments"
+                   viewPosts="Posts"
+                   log="Login"
+                   sign="Signup"
+				   user="Users"
+				   prof="My Profile"
 				   show={SideDrawerOpen} 
 				 />
 				{backdrop}
-            <main className="main">
-            <div className="content">
-            <h1>Login</h1>
-            </div>
-            </main>
+            <h1>view comments</h1>
         </div>
     )
 }
 
-export default Login
+export default PostComments

@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from '../images/whiteLogo.png';
+import logo from '../../images/whiteLogo.png';
 import { Link } from 'react-router-dom';
 
-import DrawerToggleButtonMain from '../SideDrawer/DrawerToggleButton';
+import DrawerToggleButtonMain from '../Backdrop/SideDrawer/DrawerToggleButton';
 
 import './Toolbar.css';
 

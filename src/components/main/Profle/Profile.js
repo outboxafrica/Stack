@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
-import Toolbar from '../Toolbar/Toolbar'
-import Backdrop from '../Backdrop/Backdrop'
-import SideDrawer from '../SideDrawer/SideDrawer'
+import Toolbar from '../../UI/Toolbar/Toolbar'
+import Backdrop from '../../UI/Backdrop/Backdrop'
+import SideDrawer from '../../UI/Backdrop/SideDrawer/SideDrawer'
+import '../Login/login.css'
 
-
-function LandingPage(props) {
+function Profile(props) {
 
     const [ SideDrawerOpen, setSideDrawerOpen ] = useState(false);
 
@@ -26,7 +26,7 @@ function LandingPage(props) {
 		backdrop = <Backdrop click={backdropClickHandler} />;
 	}
     return (
-        <div>
+        <div id="signup" >
             <Toolbar
 				   login="Login" 
 				   signup="Signup" 
@@ -35,18 +35,20 @@ function LandingPage(props) {
 				
 
             <SideDrawer
-				   log="Login" 
-				   sign="Signup"
+				   about="About"
+                   log="Login"
+                   sign="Signup"
+				   prof="My Profile"
 				   show={SideDrawerOpen} 
 				 />
 				{backdrop}
             <main className="main">
             <div className="content">
-            <h1>Landing page</h1>
+            <h1>Create a profile</h1>
             </div>
             </main>
         </div>
     )
 }
 
-export default LandingPage
+export default Profile

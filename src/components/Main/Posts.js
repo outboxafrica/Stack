@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import Backdrop from '../Backdrop/Backdrop'
-import Toolbar from '../Toolbar/Toolbar'
-import SideDrawer from '../SideDrawer/SideDrawer'
+import Backdrop from '../UI/Backdrop/Backdrop'
+import Toolbar from '../UI/Toolbar/Toolbar'
+import SideDrawer from '../UI/Backdrop/SideDrawer/SideDrawer'
 
 function Posts(props) {
 

@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
-import Toolbar from '../UI/Toolbar/Toolbar'
-import Backdrop from '../UI/Backdrop/Backdrop'
-import SideDrawer from '../UI/Backdrop/SideDrawer/SideDrawer'
+import Toolbar from '../../UI/Toolbar/Toolbar'
+import Backdrop from '../../UI/Backdrop/Backdrop'
+import SideDrawer from '../../UI/Backdrop/SideDrawer/SideDrawer'
 
-function PostComments(props) {
+
+function LandingPage(props) {
 
     const [ SideDrawerOpen, setSideDrawerOpen ] = useState(false);
 
@@ -34,19 +35,18 @@ function PostComments(props) {
 				
 
             <SideDrawer
-				   about="About"
-                   comments="View Comments"
-                   viewPosts="Posts"
-                   log="Login"
-                   sign="Signup"
-				   user="Users"
-				   prof="My Profile"
+				   log="Login" 
+				   sign="Signup"
 				   show={SideDrawerOpen} 
 				 />
 				{backdrop}
-            <h1>view comments</h1>
+            <main className="main">
+            <div className="content">
+            <h1>Landing page</h1>
+            </div>
+            </main>
         </div>
     )
 }
 
-export default PostComments
+export default LandingPage

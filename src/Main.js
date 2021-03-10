@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Signup from './components/Main/Signup';
-import LandingPage from './components/Main/LandingPage';
-import Login from './components/Main/Login';
-import createProfile from './components/Main/Profile'
+import Signup from './components/main/Signup/Signup';
+import LandingPage from './components/main/LandingPage/LandingPage';
+import Login from './components/main/Login/Login';
+import createProfile from './components/main/Profle/Profile'
 import Lookbook from './components/Main/Lookbook';
 import PostComments from './components/Main/PostComments';
 import Posts from './components/Main/Posts';

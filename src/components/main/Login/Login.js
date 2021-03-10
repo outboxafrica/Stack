@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
-import Toolbar from '../Toolbar/Toolbar'
-import Backdrop from '../Backdrop/Backdrop'
-import SideDrawer from '../SideDrawer/SideDrawer'
+import Toolbar from '../../UI/Toolbar/Toolbar'
+import Backdrop from '../../UI/Backdrop/Backdrop'
+import SideDrawer from '../../UI/Backdrop/SideDrawer/SideDrawer'
 import './login.css'
+import LoginForm from '../../UI/LoginForm/loginForm'
 
-function Profile(props) {
+function Login() {
 
     const [ SideDrawerOpen, setSideDrawerOpen ] = useState(false);
 
@@ -17,7 +18,6 @@ function Profile(props) {
 	function backdropClickHandler() {
 		setSideDrawerOpen(false);
 	}
-    
 	
 
 	let backdrop;
@@ -26,29 +26,28 @@ function Profile(props) {
 		backdrop = <Backdrop click={backdropClickHandler} />;
 	}
     return (
-        <div id="signup" >
+        <div id="login">
             <Toolbar
-				   login="Login" 
+                   about="About"
 				   signup="Signup" 
 				   drawerClickHandler={drawerToggleClickHandler} 
 				 />
 				
 
             <SideDrawer
-				   about="About"
-                   log="Login"
-                   sign="Signup"
-				   prof="My Profile"
+                   about="About"
+				   sign="Signup"
 				   show={SideDrawerOpen} 
 				 />
 				{backdrop}
             <main className="main">
-            <div className="content">
-            <h1>Create a profile</h1>
-            </div>
+				<div className="content">
+					<h1>Login</h1>
+					<LoginForm />
+				</div>
             </main>
         </div>
     )
 }
 
-export default Profile
+export default Login
