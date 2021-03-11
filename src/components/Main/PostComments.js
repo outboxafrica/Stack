@@ -6,7 +6,7 @@ import Backdrop from '../Backdrop/Backdrop';
 import Toolbar from '../Toolbar/Toolbar';
 import SideDrawer from '../SideDrawer/SideDrawer';
 import Sidebar from './Sidebar';
-import image from '../images/sccot.jpg';
+import Avotor from '../images/avotor.png'
 import { GrSend } from 'react-icons/gr';
 
 import './PostComments.css';
@@ -16,18 +16,18 @@ function PostComments({ props, match }) {
 
 	useEffect(() => {
 		fetchApi();
-    console.log(match)
+		console.log(match)
 	}, []);
 
 	const [ loading, setLoading ] = useState(true);
-	const [ person, setPerson ] = useState();
+	const [ person, setPerson ] = useState([]);
 
 	const fetchApi = async () => {
-		const url = `https://api.randomuser.me/?results=${match.params.id}`;
+		const url = `https://outboxedugroup3-api.herokuapp.com/api/v1/${match.params.id}`;
 		const response = await fetch(url);
 		const data = await response.json();
 		setLoading(false);
-		setPerson(data.results);
+		setPerson(data);
 		console.log(data);
 	};
 	function drawerToggleClickHandler() {
@@ -72,107 +72,19 @@ function PostComments({ props, match }) {
 							<hr />
 							<div className="userQuestion">
 								<div className="post">
-									<img src={image} alt="" />&nbsp;
-									<span>Mr</span> &nbsp;
-									<span>First</span>&nbsp;
-									<span>Last</span>
+									<img src={Avotor} alt="" />
+									<span>{person.name}</span>
 								</div>
 								<div className="prof-P-img">
-									<img src={image} alt="" height="100%" width="100%" />
+									<img src={Avotor} alt="" height="100%" width="100%" />
 								</div>
 								<div className="prof-P-message">
 									<p>
-										Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-										Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-										unknown printer took a galley
+										{person.question}
 									</p>
 								</div>
 								<hr />
-								<div className="ans-container">
-									<div className="ans-wrapper">
-										<div className="ansl">
-											<img src={image} alt="" />&nbsp;
-											<span>Mr</span> &nbsp;
-											<span>First</span>&nbsp;
-											<span>Last</span>
-										</div>
-										<p>
-											{' '}
-											Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-										</p>
-									</div>
-									<div className="ans-wrapper">
-										<div className="ansl">
-											<img src={image} alt="" />&nbsp;
-											<span>Mr</span> &nbsp;
-											<span>First</span>&nbsp;
-											<span>Last</span>
-										</div>
-										<p>
-											{' '}
-											Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-										</p>
-									</div>
-									<div className="ans-wrapper">
-										<div className="ansl">
-											<img src={image} alt="" />&nbsp;
-											<span>Mr</span> &nbsp;
-											<span>First</span>&nbsp;
-											<span>Last</span>
-										</div>
-										<p>
-											{' '}
-											Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-										</p>
-									</div>
-									<div className="ans-wrapper">
-										<div className="ansl">
-											<img src={image} alt="" />&nbsp;
-											<span>Mr</span> &nbsp;
-											<span>First</span>&nbsp;
-											<span>Last</span>
-										</div>
-										<p>
-											{' '}
-											Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-										</p>
-									</div>
-									<div className="ans-wrapper">
-										<div className="ansl">
-											<img src={image} alt="" />&nbsp;
-											<span>Mr</span> &nbsp;
-											<span>First</span>&nbsp;
-											<span>Last</span>
-										</div>
-										<p>
-											{' '}
-											Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-										</p>
-									</div>
-									<div className="ans-wrapper">
-										<div className="ansl">
-											<img src={image} alt="" />&nbsp;
-											<span>Mr</span> &nbsp;
-											<span>First</span>&nbsp;
-											<span>Last</span>
-										</div>
-										<p>
-											{' '}
-											Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-										</p>
-									</div>
-									<div className="ans-wrapper">
-										<div className="ansl">
-											<img className="img" src={image} alt="" />&nbsp;
-											<span>Mr</span> &nbsp;
-											<span>First</span>&nbsp;
-											<span>Last</span>
-										</div>
-										<p>
-											Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-										</p>
-									</div>
-								</div>
+							
 							</div>
 							<hr />
 						</div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Spring } from 'react-spring';
+import axios from 'axios'
 import Backdrop from '../Backdrop/Backdrop';
 import Toolbar from '../Toolbar/Toolbar';
 import SideDrawer from '../SideDrawer/SideDrawer';
@@ -7,24 +7,38 @@ import Sidebar from './Sidebar';
 
 import './AskQuestion.css';
 
+
 function AskQuestion(props) {
 	const [ SideDrawerOpen, setSideDrawerOpen ] = useState(false);
 
-	useEffect(() => {
-		fetchApi();
-	}, []);
+	
 
 	const [ loading, setLoading ] = useState(true);
-	const [ person, setPerson ] = useState([]);
+	const [ question, setQuestion ] = useState({
+		question:''
+	});
 
-	const fetchApi = async () => {
-		const url = 'https://git.heroku.com/outboxedugroup3-api.git';
-		const response = await fetch(url);
-		const data = await response.json();
-		setLoading(false);
-		setPerson(data.results);
-		console.log(data);
-	};
+   function changeHandler (e)  {
+	   setQuestion({question: e.target.value});
+   };
+
+
+	function submitHandler(e) {
+        e.preventDefault()
+		      console.log(question)
+
+		axios.post(`https://outboxedugroup3-api.herokuapp.com/api/v1/questions`, question)
+		 .then(response => {
+		console.log(response);
+		})
+  .catch(error => {
+   console.log(error)
+  })
+	}
+
+const {Question} = question
+
+	
 
 	function drawerToggleClickHandler() {
 		setSideDrawerOpen((prevState) => {
@@ -41,6 +55,8 @@ function AskQuestion(props) {
 	if (SideDrawerOpen) {
 		backdrop = <Backdrop click={backdropClickHandler} />;
 	}
+
+ 
 	return (
 		<div>
 			<Toolbar post="Ask question" drawerClickHandler={drawerToggleClickHandler} />
@@ -61,12 +77,12 @@ function AskQuestion(props) {
 					<Sidebar />
 				</div>
 							<div className="question-wrapper">
-								<div className="main-wrapper">
+								<form onSubmit={submitHandler} className="main-wrapper">
 									<div className="quesion-image" />
 									<h1>Post A Question</h1>
-									<textarea className="textarea" placeholder="Add question" />
-									<button type="submit">Post Question</button>
-								</div>
+									<textarea className="textarea" placeholder="Add question" value={Question} onChange={changeHandler}/>
+									<button type="submit">Post Question</button> 
+								</form>
 							</div>
 			</main>
 		</div>

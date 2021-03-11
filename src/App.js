@@ -24,7 +24,7 @@ function App(props) {
 
 					<Route path="/askQuestion" exact component={AskQuestion} />
 					<Route path="/lookbook" exact component={Lookbook} />
-					<Route path="/posts/:id" exact component={PostComments} />
+					<Route path="/posts/:date" exact component={PostComments} />
 					<Route path="/posts" exact component={Posts} />
 					<Route path="/userPage" exact component={UserPage} />
 				</Switch>

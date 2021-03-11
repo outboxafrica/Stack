@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FlatList, ScrollView } from 'react-native';
 import {Link} from 'react-router-dom'
+import axios from 'axios'
 import {GrSend} from 'react-icons/gr'
 import Toolbar from '../Toolbar/Toolbar';
 import Backdrop from '../Backdrop/Backdrop';
@@ -20,13 +21,15 @@ function UserPage(props) {
 	const [ loading, setLoading ] = useState(true);
 	const [ person, setPerson ] = useState([]);
 
-	const fetchApi = async () => {
-		const url = 'https://api.randomuser.me/?results=5';
-		const response = await fetch(url);
-		const data = await response.json();
-		setLoading(false);
-		setPerson(data.results);
-		console.log(data);
+	const fetchApi = () => {
+        axios.get( 'https://outboxedugroup3-api.herokuapp.com/api/v1/myquestions').then(res =>{
+			const data =  res.json();
+			setLoading(false);
+			setPerson(data.results);
+			console.log(data);
+		})
+		
+		
 	};
 	//    function to toggle the button
 	function drawerToggleClickHandler() {
@@ -63,9 +66,8 @@ function UserPage(props) {
 							</div>
 						</div>
 						<div className="lower-container">
-							<span>Mr</span> &nbsp;
-							<span>Lemi</span>&nbsp;
-							<span>Agrey</span>
+						
+							<span>{person.user}</span>
 						</div>
 					</div>
 					<hr />

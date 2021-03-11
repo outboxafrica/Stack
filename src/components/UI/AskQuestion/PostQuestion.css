@@ -1,0 +1,51 @@
+.input{
+    height: 25%;
+    width: 80%;
+    border-radius: 5px;
+    border: none;
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+  }
+  
+   textarea{
+    margin-top: 2rem;
+    background: #5c7a9c;
+    color: white;
+    width: 25%;
+    height: 10%;
+    border: none;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+  }
+  
+  @media (max-width: 768px){
+    .hidden{
+      display:none;
+  
+   
+    }
+    .main-wrapper{
+      height: 90%;
+      width: 96%;
+      background:transparent;
+    }
+  
+    .quesion-image{
+     border-radius: 5px;
+    }
+    .input{
+      width: 90%;
+    }
+    
+    .main-wrapper button{
+      margin-top: 2rem;
+      background: #5c7a9c;
+      color: white;
+      width: 30%;
+      height: 10%;
+      font-size: 1rem;
+    }
+  }

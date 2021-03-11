@@ -5,6 +5,7 @@ import Toolbar from '../Toolbar/Toolbar';
 import Backdrop from '../Backdrop/Backdrop';
 import SideDrawer from '../SideDrawer/SideDrawer';
 import Sidebar from './Sidebar';
+import Avotor from '../images/avotor.png'
 import './Lookbook.css';
 
 function Lookbook(props) {
@@ -18,11 +19,11 @@ function Lookbook(props) {
 	const [ person, setPerson ] = useState([]);
 
 	const fetchApi = async () => {
-		const url = 'https://git.heroku.com/outboxedugroup3-api.git';
+		const url = 'https://outboxedugroup3-api.herokuapp.com/api/v1/questions';
 		const response = await fetch(url);
 		const data = await response.json();
 		setLoading(false);
-		setPerson(data.results);
+		setPerson(data);
 		console.log(data);
 	};
 
@@ -66,13 +67,12 @@ function Lookbook(props) {
 							<ScrollView>
 								<div className="users">
 									{person.map((user) => (
-										<div class="card" style={{ width: '18rem' }}>
-											<img src={user.picture.large} class="card-img-top" alt="..." />
+										<div key={person.id} class="card" style={{ width: '18rem' }}>
+											<img src={Avotor} class="card-img-top" alt="..." />
 											<div class="card-body">
 												<h5 class="card-title">
-													<span>{user.name.title}</span> &nbsp;
-													<span>{user.name.first}</span>&nbsp;
-													<span>{user.name.last}</span>
+													<span>{user.user.name}</span>
+													<h5>Email:{user.user.email}</h5>
 												</h5>
 											</div>
 										</div>

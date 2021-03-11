@@ -90,19 +90,8 @@
     font-size: 15px;
   }
   
-  .ans-container{
-    position: relative;
-    padding: none;
-    margin: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 41%;
-  }
-  .ans-container p{
-    font-size: 15px;
-    width: 100%;
-  }
+  
+ 
   .input{
     padding: 0.6rem;
     border-radius: 10px;
@@ -112,32 +101,7 @@
     width: -10%;
   }
 
-  .ans-wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-start;
-    align-items: flex-start;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 5px;
-    margin-top: 10px;
-  }
-    .ansl{
-      display: flex;
-      flex-direction: row;
-      justify-content:center;
-      align-items: flex-start;
-     
-    }
-    .ansl img{
-     width: 40px;
-     height: 40px;
-     border-radius: 50%;
-    }
-    .ans-wrapper .ansl span{
-      padding: 0.8rem 0 0 0;
-      font-size: 15px;
-    }
+  
   
   
   @media (max-width: 539px){
@@ -170,12 +134,7 @@
       width: 100%;
     
     }
-    .ans-wrapper{
-     width: 100%;
-    }
-    .ans-container {
-      width: 80%;
-    }
+    
   }
 
     
