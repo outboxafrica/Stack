@@ -1,0 +1,113 @@
+
+
+.main{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  height: 100%;
+  display: flex;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.upload__question{
+  background:rgba(0,0,0,0.7) url(../images/congested.jpg);
+  background-size: cover;
+  background-blend-mode: darken;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  display: flex;
+  height: 100%;
+  width: 60%;
+  flex: 8.5;
+}
+
+.main-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 80%;
+  width: 80%;
+  background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(10px);
+}
+
+.quesion-image{
+  background:url(../images/penbook.jpg);
+  background-size: cover;
+  width: 80%;
+  height: 25%;
+  border-radius: 5px;
+}
+
+.hidden{
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  height: 100%;
+  width: 100%;
+  background: #4d6785;
+  box-shadow: 1px 0px 7px rgba(0,0,0,0.5);
+}
+
+
+.textarea{
+  height: 25%;
+  width: 80%;
+  border-radius: 5px;
+  border: none;
+  font-family: sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.main-wrapper button{
+  margin-top: 2rem;
+  background: #5c7a9c;
+  color: white;
+  width: 25%;
+  height: 10%;
+  border: none;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px){
+  .hidden{
+    display:none;
+
+ 
+  }
+  .main-wrapper{
+    height: 90%;
+    width: 96%;
+    background:transparent;
+  }
+
+  .quesion-image{
+   border-radius: 5px;
+   width: 80%;
+  }
+  
+  .textarea{
+    width: 90%;
+  }
+  
+  .main-wrapper button{
+    margin-top: 2rem;
+    background: #5c7a9c;
+    color: white;
+    width: 30%;
+    height: 10%;
+    font-size: 1rem;
+  }
+}

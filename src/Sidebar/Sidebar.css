@@ -1,0 +1,42 @@
+
+  .sidebar{
+    position: sticky;
+  }
+  .sidebar ul li {
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: center;
+   color: white;
+   margin-top: 2rem;
+   text-decoration: none;
+}
+
+  .sidebar ul{
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+   margin-top: 2rem;
+   text-decoration: none;
+   color: white;
+
+}
+  link{
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0.2rem 0;
+  
+}
+
+@media (max-width: 768px){
+  .sidebar{
+      display: none;
+  }
+}
+  
+  
+  
+  
+  
